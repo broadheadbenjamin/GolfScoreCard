@@ -51,14 +51,17 @@
 
     <Button
         android:id="@+id/addStrokeButton"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:text="+"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/removeStrokeButton"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,5 +70,6 @@
         android:layout_width="1dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintGuide_percent="0.5" />
 </android.support.constraint.ConstraintLayout>
