@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 public class MainActivity extends ListActivity {
     private Hole[] mHoles = new Hole[18];
+    private ListAdapter mListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,11 +14,12 @@ public class MainActivity extends ListActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize holes.
-        int holeCount = 1;
         int strokeCount = 0;
-        for (Hole hole: mHoles) {
-            hole = new Hole("Hole" + holeCount + " :", strokeCount);
-            holeCount++;
+        for (int i = 0; i < mHoles.length; i++){
+            mHoles[i] = new Hole("Hole " + (i + 1) + " :", strokeCount);
         }
+
+        mListAdapter = new ListAdapter(this, mHoles);
+        setListAdapter(mListAdapter);
     }
 }
